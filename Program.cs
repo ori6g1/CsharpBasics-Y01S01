@@ -57,15 +57,23 @@ Console.WriteLine(--incrementNumber);
 Console.WriteLine(lineBreak);
 
 // D - Variables: Wild Horses
-string mountName = "Alfred";
-int averageMountSpeedInMiles = 18, distanceToSouthlandInKM = 1750, distanceToHinterlandsInKM = 3521;
-float milesPerKilometer = 0.621f;
+Console.WriteLine("User defined trip information:");
 
-Console.WriteLine("Predetermined trip information:");
-Console.WriteLine("The mount's name is: " + mountName + "and its speed is " + averageMountSpeedInMiles + " mph.");
-Console.WriteLine("The distance to the Southlands is: " + distanceToSouthlandInKM + " kilometers.");
-Console.WriteLine("The distance to the Southlands is: " + distanceToHinterlandsInKM + " kilometers.");
-Console.WriteLine("There are " + milesPerKilometer + " miles in a kilometer." + lineBreak);
+Console.Write("Please enter the mount's name: ");
+string mountName = Console.ReadLine();
+
+Console.Write("Please enter the " + mountName + "'s average speed in miles per hour: ");
+int averageMountSpeedInMiles = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Please enter the distance to the Southland in kilometers: ");
+int distanceToSouthlandInKM = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Please enter the distance to the Hinterlands in kilometers: ");
+int distanceToHinterlandsInKM = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Please enter the amount of miles in a kilometer: ");
+float milesPerKilometer = float.Parse(Console.ReadLine());
+Console.WriteLine();
 
 //Trip calculation
 float distanceToSouthlandInMiles = (float)distanceToSouthlandInKM * milesPerKilometer;
