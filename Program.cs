@@ -36,7 +36,7 @@ si += three + four.ToString();
 di += three + five.ToString();
 
 // C - Variables and Operators Syntax
-string myName = "Ori", welcomeMessage = "Hello ,", lineBreak = "\r\n";
+string myName = "Ori", welcomeMessage = "Hello, ", lineBreak = "\r\n";
 Console.WriteLine(welcomeMessage + myName + lineBreak);
 
 int numberOne = 1 , numberTwo = 2;
@@ -59,4 +59,25 @@ Console.WriteLine(lineBreak);
 // D - Variables: Wild Horses
 string mountName = "Alfred";
 int averageMountSpeedInMiles = 18, distanceToSouthlandInKM = 1750, distanceToHinterlandsInKM = 3521;
-float MilesPerKilometer = 0.621f;
+float milesPerKilometer = 0.621f;
+
+Console.WriteLine("Predetermined trip information:");
+Console.WriteLine("The mount's name is: " + mountName + "and its speed is " + averageMountSpeedInMiles + " mph.");
+Console.WriteLine("The distance to the Southlands is: " + distanceToSouthlandInKM + " kilometers.");
+Console.WriteLine("The distance to the Southlands is: " + distanceToHinterlandsInKM + " kilometers.");
+Console.WriteLine("There are " + milesPerKilometer + " miles in a kilometer." + lineBreak);
+
+//Trip calculation
+float distanceToSouthlandInMiles = (float)distanceToSouthlandInKM * milesPerKilometer;
+float distanceToHinterlandsInMiles = (float)distanceToHinterlandsInKM * milesPerKilometer;
+
+int hoursToSouthland = (int)(distanceToSouthlandInMiles / averageMountSpeedInMiles);
+int hoursToHinterlands = (int)(distanceToHinterlandsInMiles / averageMountSpeedInMiles);
+Console.WriteLine("The trip to the Southland takes " + hoursToSouthland + " hours.");
+Console.WriteLine("The trip to the Hinterlands takes " + hoursToHinterlands + " hours." + lineBreak);
+
+int hoursInDay = 24;
+int daysToSouthland = (int)hoursToSouthland / hoursInDay;
+int daysToHinterlands = (int)hoursToHinterlands / hoursInDay;
+Console.WriteLine(mountName + " will take " + daysToSouthland + " days to reach the Southland.");
+Console.WriteLine(mountName + " will take " + daysToHinterlands + " days to reach the Hinterlands.");
